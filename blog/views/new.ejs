@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills float-left">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/new">New Post</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <form action="/create" method="POST">
+        <div class="form-horizontal">
+            <h4>New Blog Post</h4>
+            <hr/>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label>Post Title</label>
+                    <input type="text" name="title" placeholder="Type a title..."/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label>Post Content</label><br>
+                    <textarea name="content" rows="2" cols="50"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8 d-inline-block">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div><!-- /.container -->
+
+</body>
+</html>
