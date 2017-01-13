@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills float-left">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/newPost">New Post</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="jumbotron">
+            <h1 class="display-3">Blog Post Module</h1>
+            <p class="lead">User is able to create, display, and delete blog posts.</p>
+            <a href="/newPost" class="btn btn-info">Add new post</a>
+        </div>
+        <div class="container-fluid">
+            <% posts.forEach(function(post) { %>
+            <div class="card" style="display: inline-block;">
+                <div class="card-block">
+                    <img class="card-img-top" src="http://lorempixel.com/300/200/?random=<%= post.id %>" alt="Card image cap">
+                    <h4 class="card-title"><%= post.title %></h4>
+                    <p class="card-text"><%= post.content %></p>
+                    <footer>
+                        <a href='delete/<%= post._id %>' class="btn btn-primary">Delete</a>
+                        <a href='viewPost/<%= post._id %>' class="btn btn-success">View Post</a>
+                    </footer>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
