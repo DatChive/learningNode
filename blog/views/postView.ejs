@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills float-left">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/newPost">New Post</a></li>
+                    <li class="nav-item"><a class="nav-link active">Viewing Post</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="jumbotron">
+            <img class="card-img-top" src="http://lorempixel.com/300/200/?random=<%= post.id %>" alt="Card image cap">
+            <h1 class="display-3">Title: <%= post.title %></h1>
+            <p class="lead">Content: <%= post.content %></p>
+            <p class="lead">
+                Long Link: <a href="http://localhost:3000/viewPost/<%= post.id %>">http://localhost:3000/viewPost/<%= post.id %></a>
+            </p>
+            <p class="lead">
+                Short Link:
+                <% if (post.shortId == null) { %>
+                    <form action="http://localhost:3000/api/shorten/<%= post._id %>" method="POST">
+                        <div class="col-md-offset-2 col-md-8 d-inline-block">
+                            <button type="submit" class="btn btn-success">Generate Short Link</button>
+                        </div>
+                    </form>
+                <% } else { %>
+                    <a href="<%= post.shortUrl %>"><%= post.shortUrl %></a>
+                <% } %>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
