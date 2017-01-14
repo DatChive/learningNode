@@ -8,13 +8,13 @@
     * - [x] Crud (sans Update)
     * - [x] Form data validation (returns json currently)
     * - [x] Style (bootstrap alpha 4)
-    * - [ ] Testing
-  2. Implement URL shortening
-    * - [ ] Create schema for storing URL Mapping
-    * - [ ] View/Form to handle user entered URL
-    * - [ ] Form validation
-    * - [ ] Display stored URL Mappings
-    * - [ ] Testing
+    * - [ ] Testing  
+  2. Implement URL shortening    
+    * - [x] Create schema for storing URL Mapping  
+    * - [x] View/Form to handle user entered URL  
+    * - [ ] Form validation  
+    * - [x] Display stored URL Mappings  
+    * - [ ] Testing     
   3. Authentication Wrapper  
   4. Unit testing for steps 2) & 3)  
   
